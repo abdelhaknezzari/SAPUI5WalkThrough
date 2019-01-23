@@ -8,24 +8,6 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("na.myProject2.controller.HelloPanel", {
-		// onInit: function () {
-
-		// 	// var oData = {
-		// 	// 	recipient: {
-		// 	// 		name: "hello"
-		// 	// 	}
-		// 	// };
-
-		// 	// var oModel = new JSONModel(oData);
-
-		// 	// this.getView().setModel(oModel);
-
-		// 	// var i18nModel = new ResourceModel({
-		// 	// 	bundleName: "na.myProject2.i18n.i18n"
-		// 	// });
-		// 	// this.getView().setModel(i18nModel, "i18n");
-
-		// },
 
 		onShowHello: function () {
 			var oBundle = this.getView().getModel("i18n").getResourceBundle();
@@ -41,7 +23,8 @@ sap.ui.define([
 			if (!this.byId("helloDialog")) {
 				Fragment.load({
 					id: oView.getId(),
-					name: "na.myProject2.view.HelloDialog"
+					name: "na.myProject2.view.HelloDialog",
+					controller: this
 				}).then(function (oDialog) {
 					oView.addDependent(oDialog);
 					oDialog.open();
@@ -50,6 +33,9 @@ sap.ui.define([
 			} else {
 				this.byId("helloDialog").open();
 			}
+		},
+		onCloseDialog: function () {
+			this.getView().byId("helloDialog").close();
 		}
 
 	});
