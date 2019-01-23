@@ -57,6 +57,10 @@
 				"settings": {
 					"bundleName": "na.myProject2.i18n.i18n"
 				}
+			},
+			"invoice": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "Invoices.json"
 			}
 		},
 		"resources": {
@@ -95,6 +99,10 @@
 				"HelloPanel": {
 					"viewType": "XML",
 					"viewName": "HelloPanel"
+				},
+				"InvoicesList": {
+					"viewType": "XML",
+					"viewName": "InvoicesList"
 				}
 			}
 		}
