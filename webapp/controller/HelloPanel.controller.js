@@ -4,7 +4,7 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/resource/ResourceModel",
 	"sap/ui/core/Fragment"
-], function (Controller, MessageToast, JSONModel, ResourceModel,Fragment) {
+], function (Controller, MessageToast, JSONModel, ResourceModel, Fragment) {
 	"use strict";
 
 	return Controller.extend("na.myProject2.controller.HelloPanel", {
@@ -35,17 +35,22 @@ sap.ui.define([
 			MessageToast.show(mSg);
 
 		},
-		onOpenDialog  : function(){
+		onOpenDialog: function () {
 			var oView = this.getView();
-			
-			if(!this.byId("helloDialog")){
-				Fragment.load({}).then();
-				
+
+			if (!this.byId("helloDialog")) {
+				Fragment.load({
+					id: oView.getId(),
+					name: "na.myProject2.view.HelloDialog"
+				}).then(function (oDialog) {
+					oView.addDependent(oDialog);
+					oDialog.open();
+				});
+
 			} else {
 				this.byId("helloDialog").open();
 			}
 		}
-		
 
 	});
 });
