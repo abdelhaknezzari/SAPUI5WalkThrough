@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/Device",
 	"na/myProject2/model/models",
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/model/resource/ResourceModel"
-], function (UIComponent, Device, models, JSONModel, ResourceModel) {
+	"sap/ui/model/resource/ResourceModel",
+	"./controller/HelloDialog"
+], function (UIComponent, Device, models, JSONModel, ResourceModel, HelloDialog) {
 	"use strict";
 
 	return UIComponent.extend("na.myProject2.Component", {
@@ -22,12 +23,6 @@ sap.ui.define([
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
-			// // enable routing
-			// this.getRouter().initialize();
-
-			// // set the device model
-			// this.setModel(models.createDeviceModel(), "device");
-
 			var oData = {
 				recipient: {
 					name: "hello"
@@ -42,6 +37,17 @@ sap.ui.define([
 				bundleName: "na.myProject2.i18n.i18n"
 			});
 			this.setModel(i18nModel, "i18n");
+
+			this._helloDialog = new HelloDialog(this.getRootControl());
+
+		},
+		exit: function () {
+			this._helloDialog.destroy();
+			delete this._helloDialog;
+		},
+
+		openHelloDialog: function () {
+			this._helloDialog.open();
 
 		}
 	});

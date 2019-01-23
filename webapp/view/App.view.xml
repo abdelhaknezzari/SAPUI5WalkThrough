@@ -4,6 +4,9 @@
 		<App class="myAppDemoWT">
 			<pages>
 				<Page>
+					<headerContent>
+						<Button icon="sap-icon://hello-world" press=".onOpenDialog"/>
+					</headerContent>
 					<content>
 						<mvc:XMLView viewName="na.myProject2.view.HelloPanel"/>
 					</content>

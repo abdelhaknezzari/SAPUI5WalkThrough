@@ -18,21 +18,7 @@ sap.ui.define([
 
 		},
 		onOpenDialog: function () {
-			var oView = this.getView();
-
-			if (!this.byId("helloDialog")) {
-				Fragment.load({
-					id: oView.getId(),
-					name: "na.myProject2.view.HelloDialog",
-					controller: this
-				}).then(function (oDialog) {
-					oView.addDependent(oDialog);
-					oDialog.open();
-				});
-
-			} else {
-				this.byId("helloDialog").open();
-			}
+			this.getOwnerComponent().openHelloDialog();
 		},
 		onCloseDialog: function () {
 			this.getView().byId("helloDialog").close();

@@ -7,7 +7,10 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("na.myProject2.controller.App", {
-	
+
+		onOpenDialog: function () {
+			this.getOwenerComponent().openHelloDialog();
+		}
 
 	});
 });
