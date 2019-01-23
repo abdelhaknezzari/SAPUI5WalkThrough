@@ -1,0 +1,14 @@
+<mvc:View controllerName="na.myProject2.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<Shell>
+		<App class="myAppDemoWT">
+			<pages>
+				<Page>
+					<content>
+						<mvc:XMLView viewName="na.myProject2.view.HelloPanel"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
