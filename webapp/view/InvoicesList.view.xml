@@ -3,7 +3,11 @@
 		<items>
 			<ObjectListItem title="{invoice>Quantity}x{invoice>ProductName}"
 				number="{ parts:[{path:'invoice>ExtendedPrice'}], type:'sap.ui.model.model.type.Currency', formatOptions:{showMesure:false} }"
-				numberUnit="{view>/currency}" numberState="{=${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}"/>
+				numberUnit="{view>/currency}" numberState="{=${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}">
+				<firstStatus>
+					<ObjectStatus text="{ path: 'invoice>Status', formatter:'.formatter.statusText' }"/>
+				</firstStatus>
+			</ObjectListItem>
 		</items>
 	</List>
 </mvc:View>
