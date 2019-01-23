@@ -2,8 +2,8 @@
 	<List class="sapUiResponsiveMargin" width="auto" items="{invoice>/Invoices}">
 		<items>
 			<ObjectListItem title="{invoice>Quantity}x{invoice>ProductName}"
-				number="{ parts:[{path:'invoice>ExtendedPrice'},{path:'view>/currency'}], type:'sap.ui.model.model.type.Currency', formatOptions:{showMesure:false} }"
-				numberUnit="{view>/currency}"/>
+				number="{ parts:[{path:'invoice>ExtendedPrice'}], type:'sap.ui.model.model.type.Currency', formatOptions:{showMesure:false} }"
+				numberUnit="{view>/currency}" numberState="{=${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}"/>
 		</items>
 	</List>
 </mvc:View>
