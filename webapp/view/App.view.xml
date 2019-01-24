@@ -1,5 +1,5 @@
 <mvc:View controllerName="na.myProject2.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-	<App class="myAppDemoWT">
+	<App>
 		<pages>
 			<Page>
 				<headerContent>
