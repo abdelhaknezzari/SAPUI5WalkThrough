@@ -1,12 +1,11 @@
-sap.ui.define([], function() {
-	
+sap.ui.define([], function () {
+
 	"use strict";
-	
-	return{ statusText : function(sStatus)
-	{
-		var oBundle = this.getView().getModel("i18n").getResourceBundle();
-		switch(sStatus)
-		{
+
+	return {
+		statusText: function (sStatus) {
+			var oBundle = this.getView().getModel("i18n").getResourceBundle();
+			switch (sStatus) {
 			case "A":
 				return oBundle.getText("invoicestatusA");
 			case "B":
@@ -14,11 +13,10 @@ sap.ui.define([], function() {
 			case "C":
 				return oBundle.getText("invoicestatusC");
 			default:
-			    return oBundle.getText("invoicestatusA"); 
-		}
-		
+				return sStatus;
+			}
 
-	}
+		}
 	};
-	
+
 });
