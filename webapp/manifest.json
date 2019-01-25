@@ -7,13 +7,14 @@
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
-		"dataSources":{ 
-			"invoiceRemoute":{
-				"uri":"/destinations/northwind/V2/Northwind/Northwind.svc/",
-				"type":"OData",
-				"settings":{"odataVersion":"2.0"}
+		"dataSources": {
+			"invoiceRemoute": {
+				"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
 			}
-			
 		},
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
@@ -84,33 +85,29 @@
 				"async": true,
 				"viewPath": "na.myProject2.view",
 				"controlAggregation": "pages",
-				"controlId": "idAppControl",
+				"controlId": "app",
 				"clearControlAggregation": false
 			},
 			"routes": [
-				{
-					"name": "RouteView1",
-					"pattern": "RouteView1",
-					"target": [
-						"TargetView1"
-					]
+				{   "pattern": "",
+					"name": "overview",
+					"target": "overview"
+				},
+				{   "pattern": "detail",
+					"name": "detail",
+					"target": "detail"
 				}
 			],
 			"targets": {
-				"TargetView1": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewName": "App"
+				"overview": {
+					"viewId":"overview",
+					"viewName":"Overview"
 				},
-				"HelloPanel": {
-					"viewType": "XML",
-					"viewName": "HelloPanel"
-				},
-				"InvoicesList": {
-					"viewType": "XML",
-					"viewName": "InvoicesList"
+				"detail": {
+					"viewId":"detail",
+					"viewName":"Detail"
 				}
+
 			}
 		}
 	}

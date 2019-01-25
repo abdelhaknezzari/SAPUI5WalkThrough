@@ -1,0 +1,6 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="na.myProject2.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>DetailPageTitle}">
+		<ObjectHeader title="Invoices"/>
+	</Page>
+</mvc:View>

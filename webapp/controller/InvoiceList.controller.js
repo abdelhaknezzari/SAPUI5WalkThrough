@@ -35,6 +35,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "../
 				var oBinding = oList.getBinding("items");
 				oBinding.filter(aFilter);
 
+			},
+			onPress: function (oEvent) {
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				oRouter.navTo("detail");
+
 			}
 
 		});
